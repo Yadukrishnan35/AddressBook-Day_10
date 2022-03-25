@@ -54,6 +54,13 @@ public class Main {
 			
 		}
 		contactOperate.showcontact(contact);
+		System.out.println("Do you want to Delete: Press Y/N");
+		char deleteOption = sc.next().charAt(0);
+		if(deleteOption == 'Y') {
+			contactOperate.deleteContact(contact);
+			
+		}
+		contactOperate.showcontact(contact);
 	}
 
 

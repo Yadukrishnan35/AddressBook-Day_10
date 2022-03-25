@@ -3,11 +3,11 @@ package com.blz.addressbook;
 import java.util.Scanner;
 
 public class ContactOperation {
-
+	
 	public void editContact(AddressBook contactDetails) {
-		
-		String address;
 		Scanner sc = new Scanner(System.in);
+		String address;
+		
 		System.out.println("Enter the First name for Edit:");
 		String editName = sc.nextLine();
 		if(editName.equals(contactDetails.getFirstName()))
@@ -19,13 +19,33 @@ public class ContactOperation {
 		else {
 			System.out.println("Contact not existing");
 		}
-		
+	
+		sc.close();
 	}
+	
+	public AddressBook deleteContact(AddressBook contact) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the name to delete:");
+		String deleteName = sc.nextLine();
+		if(deleteName.equals(contact.getFirstName())) {
+			
+			AddressBook details = new AddressBook();
+			System.out.println("Your Contact has Deleted");
+			return details;
+		}
+		else {
+			System.out.println("Selected Contact Does not Exist");
+		}
+		
+		return contact;
 
+	}
+	
+		
 	public void showcontact(AddressBook contactDetails) {
 		
 		System.out.println("First name:"+contactDetails.getFirstName());
-		System.out.println("Last name:"+contactDetails.getFirstName());
+		System.out.println("Last name:"+contactDetails.getLastName());
 		System.out.println("Address:"+contactDetails.getAddress());
 		System.out.println("City:"+contactDetails.getCity());
 		System.out.println("State:"+contactDetails.getState());
@@ -35,5 +55,5 @@ public class ContactOperation {
 	
 	
 	}
-	
+
 }
