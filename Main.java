@@ -44,14 +44,17 @@ public class Main {
 		zip = sc.nextInt();
 		contact.setZip(zip);
 		
-		System.out.println("\n First Name :" +contact.getFirstName());
-		System.out.println("\n Last Name :" +contact.getFirstName());
-		System.out.println("\n Address :" +contact.getAddress());
-		System.out.println("\n City :" +contact.getCity());
-		System.out.println("\n State  :" +contact.getState());
-		System.out.println("\n Email :" +contact.getEmail());
-		System.out.println("\n PhoneNo :" +contact.getPhoneNo());
-		System.out.println("\n Zip :" +contact.getZip());
+		ContactOperation contactOperate = new ContactOperation();
+		contactOperate.showcontact(contact);
 		
+		System.out.println("Do you want to Edit: Press Y/N");
+		char editOption = sc.next().charAt(0);
+		if(editOption == 'Y') {
+			contactOperate.editContact(contact);
+			
+		}
+		contactOperate.showcontact(contact);
 	}
+
+
 }

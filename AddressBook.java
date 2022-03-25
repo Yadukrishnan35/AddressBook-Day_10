@@ -1,6 +1,6 @@
 package com.blz.addressbook;
 
-public class AddressBook extends Contact {
+public class AddressBook extends ContactDetails {
 
 	String address,city,state;
 	long phoneNo;

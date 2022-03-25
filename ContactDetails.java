@@ -1,6 +1,6 @@
 package com.blz.addressbook;
 
-public class Contact {
+public class ContactDetails {
 
 		String firstName,lastName,email;
 
